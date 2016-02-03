@@ -7,4 +7,4 @@ Not even Google can help: https://www.google.com/?q=is+twitter+dead
 
 Pull requests welcome.
 
-Made for fun by @ducu.
+Made for fun by [@ducu](https://twitter.com/ducu).
