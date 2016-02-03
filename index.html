@@ -27,8 +27,44 @@
     <link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <style>
-      body { padding-top: 0; }
-      .jumbotron { padding-top: 0;padding-bottom: 0;background-color: transparent; }
+      @keyframes vanish {
+        0%    { background: rgba(0,0,0,0.99); }
+        50%   { background: rgba(0,0,0,0.99); }
+        70%   { background: rgba(0,0,0,0.0); }
+        100%  { background: rgba(0,0,0,0.0); }
+      }
+      .splash {
+        position: fixed;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.99); /*#222*/
+        animation: vanish 3.5s linear 1;
+      }
+      @keyframes splash {
+        0%    { width:  100px; height:  100px; }
+        25%   { width:  100px; height:  100px; }
+        30%   { width:   70px; height:   70px; }
+        70%   { fill: rgba(255,255,255,0.8); }
+        90%   { fill: rgba(255,255,255,0.0); }
+        100%  { width: 7000px; height: 7000px;
+                fill: rgba(255,255,255,0.0); }
+      }
+      .bird {
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 100px; height: 100px;
+        fill: rgba(255,255,255,0.8); /*#fff*/
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        animation: splash 3.5s linear 1;
+      }
+
+      .jumbotron {
+        padding-top: 0; padding-bottom: 0;
+        background-color: transparent;
+      }
     </style>
     
     <!--[if lt IE 9]>
@@ -39,6 +75,15 @@
   <body>
 
     <a href="https://github.com/ducu/istwitterdead"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <div class="splash">
+      <div class="bird">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="100%" height="100%">
+        <path fill="inherit" stroke="#000000" stroke-miterlimit="10" d="M175.438,142.99c-4.688-7.057-10.646-13.182-17.469-18.146
+          c0.066-1.502,0.102-3.015,0.102-4.535c0-46.324-35.26-99.74-99.74-99.74C38.518,20.567,20.094,26.38,4.58,36.317 c2.742-0.323,5.532-0.489,8.361-0.489c16.424,0,31.54,5.604,43.537,15.006c-15.312,0.283-28.289,10.408-32.75,24.346 c2.141-0.408,4.337-0.629,6.596-0.629c3.197,0,6.294,0.43,9.236,1.229c-16.062,3.249-28.125,17.374-28.125,34.374 c0,0.145,0,0.292,0.002,0.438c4.727-2.625,10.133-4.203,15.879-4.385c-9.438,6.305-15.625,16.992-15.625,29.18 c0,6.425,1.729,12.447,4.746,17.625c17.312-21.203,43.145-35.141,72.309-36.635c-0.625,2.551-0.938,5.238-0.938,7.988 c0,19.367,15.695,35.062,35.057,35.062c10.082,0,19.193-4.258,25.588-11.07c7.984,1.572,15.487,4.489,22.261,8.507 c-2.617-8.186-8.176-15.056-15.414-19.395c7.093,0.847,13.848,2.731,20.135,5.521H175.438z M136.012,141.97l-5.374,5.376 l-7.637-7.636l-7.636,7.636l-5.375-5.374l7.637-7.637l-7.637-7.637l5.375-5.374l7.636,7.636l7.637-7.636l5.374,5.375l-7.635,7.636 L136.012,141.97z"/>
+        </svg>
+      </div>
+    </div>
 
     <div class="container text-center">
       <div class="jumbotron">
