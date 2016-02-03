@@ -2,45 +2,162 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Is Twitter Dead?</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="" />
-    <meta property="description" content=""/>
-    <meta property="twitter:title" content=""/>
-    <meta property="twitter:description" content=""/>
-    <meta property="twitter:image" content=""/>
+    <title>Is Twitter Dead?</title>
+    <meta name="description" content="An ongoing dilemma 🤔">
+    <meta name="author" content="Alexandru Stanciu (@ducu)">
+
+    <meta property="twitter:title" content="Is Twitter Dead?"/>
+    <meta property="twitter:description" content="An ongoing dilemma 🤔"/>
+    <meta property="twitter:image" content="istwitterdead.png"/>
+    <meta property="og:title" content="Is Twitter Dead?"/>
+    <meta property="og:description" content="An ongoing dilemma 🤔"/>
     <meta property="og:site_name" content="IsTwitterDead.com"/>
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
-    <meta property="og:image" content=""/>
+    <meta property="og:image" content="istwitterdead.png"/>
+
+
+    <link rel="icon" href="istwitterdead.png">
 
     <!-- Bootstrap -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
     <style>
+      html, body {
+        height: 100%;
+      }
+      @keyframes splash {
+        0%    { background: rgba(0,0,0,0.99); }
+        50%   { background: rgba(0,0,0,0.99); }
+        60%   { background: rgba(0,0,0,0.0); }
+        100%  { background: rgba(0,0,0,0.0); }
+      }
+      .splash {
+        display: block;
+        position: fixed;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.99); /*#222*/
+        animation: splash 3.5s linear 1;
+      }
+      @keyframes bird {
+        0%    { width:  100px; height:  100px; }
+        25%   { width:  100px; height:  100px; }
+        30%   { width:   70px; height:   70px; }
+        60%   { fill: rgba(255,255,255,0.9); }
+        80%   { fill: rgba(255,255,255,0.0); }
+        100%  { width: 7000px; height: 7000px;
+                fill: rgba(255,255,255,0.0); }
+      }
+      .bird {
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 100px; height: 100px;
+        fill: rgba(255,255,255,0.9); /*#fff*/
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        animation: bird 3.5s linear 1;
+      }
+
+      .jumbotron {
+        padding-top: 0; padding-bottom: 0;
+        background-color: transparent;
+      }
+      .footer {
+        position: fixed;
+        bottom: 0; right: 0;
+        height: 30px;
+        margin-right: 15px;
+      }
     </style>
     
     <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
   <body>
 
     <a href="https://github.com/ducu/istwitterdead"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
-    <div class="container-fluid">
-
+    <div id="splash" class="splash">
+      <div class="bird">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="100%" height="100%">
+        <path fill="inherit" stroke="#222" stroke-miterlimit="10" d="M175.438,142.99c-4.688-7.057-10.646-13.182-17.469-18.146
+          c0.066-1.502,0.102-3.015,0.102-4.535c0-46.324-35.26-99.74-99.74-99.74C38.518,20.567,20.094,26.38,4.58,36.317 c2.742-0.323,5.532-0.489,8.361-0.489c16.424,0,31.54,5.604,43.537,15.006c-15.312,0.283-28.289,10.408-32.75,24.346 c2.141-0.408,4.337-0.629,6.596-0.629c3.197,0,6.294,0.43,9.236,1.229c-16.062,3.249-28.125,17.374-28.125,34.374 c0,0.145,0,0.292,0.002,0.438c4.727-2.625,10.133-4.203,15.879-4.385c-9.438,6.305-15.625,16.992-15.625,29.18 c0,6.425,1.729,12.447,4.746,17.625c17.312-21.203,43.145-35.141,72.309-36.635c-0.625,2.551-0.938,5.238-0.938,7.988 c0,19.367,15.695,35.062,35.057,35.062c10.082,0,19.193-4.258,25.588-11.07c7.984,1.572,15.487,4.489,22.261,8.507 c-2.617-8.186-8.176-15.056-15.414-19.395c7.093,0.847,13.848,2.731,20.135,5.521H175.438z M136.012,141.97l-5.374,5.376 l-7.637-7.636l-7.636,7.636l-5.375-5.374l7.637-7.637l-7.637-7.637l5.375-5.374l7.636,7.636l7.637-7.636l5.374,5.375l-7.635,7.636 L136.012,141.97z"/>
+        </svg>
+      </div>
     </div>
+
+    <div class="container text-center">
+      <div class="jumbotron">
+        <h1>Is Twitter Dead?</h1>
+        <p>An ongoing dilemma 🤔</p>
+      </div>
+      <div class="timeline">
+        <a class="twitter-timeline" href="https://twitter.com/search?q=%22twitter%20dead%22" data-widget-id="694649069055168512" data-chrome="noheader nofooter noborders transparent" data-aria-polite="assertive">Tweets about "twitter dead"</a>
+      </div>
+    </div>
+
+    <div class="footer pull-right">
+      <span>made for fun by <a href="https://twitter.com/intent/follow/?screen_name=ducu">@ducu</a></span>
+    </div>
+
+    <script>
+      function removeSplash(event) {
+        if (event.animationName === 'splash') {
+          // event.target.style.display = 'none';
+          event.target.parentNode.removeChild(event.target);
+        }
+      }
+      var splash = document.getElementById('splash');
+      splash.addEventListener('animationend', removeSplash);
+      splash.addEventListener('webkitAnimationEnd', removeSplash);
+
+
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+       
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+        return t;
+      }(document, "script", "twitter-wjs"));
+
+      function updateHeight(event) {
+        var elem = event.target;
+        var height = Math.max(document.documentElement.clientHeight, 
+          window.innerHeight || 0) - elem.offsetTop - 30; // footer
+        if (height > 30) {
+          elem.style.height = height + "px";
+        }
+      }
+      twttr.ready(
+        function (twttr) {
+          twttr.events.bind('rendered', updateHeight);
+        }
+      );
+    </script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', "UA-???", "auto");
+      ga('create', 'UA-73251514-1', 'auto');
       ga('send', 'pageview');
     </script>
 

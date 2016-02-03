@@ -1,6 +1,10 @@
 Is Twitter Dead?
 ----------------
 
-Trying to figure out this burning dilemma.
+An ongoing dilemma 🤔  
+
+Not even Google can help: https://www.google.com/?q=is+twitter+dead
 
 Pull requests welcome.
+
+Made for fun by [@ducu](https://twitter.com/ducu).
