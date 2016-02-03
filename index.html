@@ -27,6 +27,9 @@
     <link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <style>
+      html, body {
+        height: 100%;
+      }
       @keyframes splash {
         0%    { background: rgba(0,0,0,0.99); }
         50%   { background: rgba(0,0,0,0.99); }
@@ -66,6 +69,12 @@
         padding-top: 0; padding-bottom: 0;
         background-color: transparent;
       }
+      .footer {
+        position: fixed;
+        bottom: 0; right: 0;
+        height: 30px;
+        margin-right: 15px;
+      }
     </style>
     
     <!--[if lt IE 9]>
@@ -86,6 +95,20 @@
       </div>
     </div>
 
+    <div class="container text-center">
+      <div class="jumbotron">
+        <h1>Is Twitter Dead?</h1>
+        <p>An ongoing dilemma 🤔</p>
+      </div>
+      <div class="timeline">
+        <a class="twitter-timeline" href="https://twitter.com/search?q=%22twitter%20dead%22" data-widget-id="694649069055168512" data-chrome="noheader nofooter noborders transparent" data-aria-polite="assertive">Tweets about "twitter dead"</a>
+      </div>
+    </div>
+
+    <div class="footer pull-right">
+      <span>made for fun by <a href="https://twitter.com/intent/follow/?screen_name=ducu">@ducu</a></span>
+    </div>
+
     <script>
       function removeSplash(event) {
         if (event.animationName === 'splash') {
@@ -96,17 +119,38 @@
       var splash = document.getElementById('splash');
       splash.addEventListener('animationend', removeSplash);
       splash.addEventListener('webkitAnimationEnd', removeSplash);
-    </script>
 
-    <div class="container text-center">
-      <div class="jumbotron">
-        <h1>Is Twitter Dead?</h1>
-        <p>An ongoing dilemma 🤔</p>
-      </div>
-      <div class="timeline">
-        <a class="twitter-timeline" href="https://twitter.com/search?q=%22twitter%20dead%22" data-widget-id="694649069055168512" data-chrome="noheader nofooter noborders transparent" data-aria-polite="assertive">Tweets about "twitter dead"</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>
-    </div>
+
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+       
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+        return t;
+      }(document, "script", "twitter-wjs"));
+
+      function updateHeight(event) {
+        var elem = event.target;
+        var height = Math.max(document.documentElement.clientHeight, 
+          window.innerHeight || 0) - elem.offsetTop - 30; // footer
+        if (height > 30) {
+          elem.style.height = height + "px";
+        }
+      }
+      twttr.ready(
+        function (twttr) {
+          twttr.events.bind('rendered', updateHeight);
+        }
+      );
+    </script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
